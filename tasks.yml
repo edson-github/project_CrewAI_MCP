@@ -1,0 +1,31 @@
+# Definição das tarefas do CrewAI MCP
+tasks:
+  market_research:
+    description: "Realizar pesquisa de mercado abrangente"
+    agent: researcher
+    dependencies: []
+    expected_output: "Relatório detalhado sobre tendências de mercado"
+    
+  data_analysis:
+    description: "Analisar dados coletados da pesquisa de mercado"
+    agent: analyst
+    dependencies: [market_research]
+    expected_output: "Análise estatística e insights dos dados"
+    
+  strategy_development:
+    description: "Desenvolver estratégia baseada nas análises"
+    agent: strategist
+    dependencies: [data_analysis]
+    expected_output: "Plano estratégico detalhado"
+    
+  implementation_planning:
+    description: "Criar plano de implementação da estratégia"
+    agent: strategist
+    dependencies: [strategy_development]
+    expected_output: "Plano de ação com cronograma e marcos"
+
+workflow:
+  - market_research
+  - data_analysis
+  - strategy_development
+  - implementation_planning

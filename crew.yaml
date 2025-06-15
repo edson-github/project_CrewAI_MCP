@@ -1,0 +1,28 @@
+# Configuração geral do CrewAI MCP
+name: "Market Analysis Crew"
+description: "Equipe especializada em análise de mercado e planejamento estratégico"
+
+# Configurações globais para todos os agentes
+global_settings:
+  temperature: 0.7
+  max_tokens: 1500
+  model: "gpt-4"
+  language: "portuguese"
+
+# Configurações de execução
+execution:
+  parallel: false
+  max_iterations: 3
+  timeout: 600  # em segundos
+
+# Configurações de logging
+logging:
+  level: "INFO"
+  file: "crew.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Configurações de output
+output:
+  format: "markdown"
+  save_results: true
+  output_dir: "./outputs"
